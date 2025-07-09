@@ -1,5 +1,6 @@
 #pragma once
 #include "include/base.h"
+#include <cjson/cJSON.h>
 
 /* Library will hold the structs and types for most of the project, including the structs i will parse json into.*/
 
@@ -18,7 +19,7 @@ typedef struct {
     String method;
     String url;
     KeyValueVec headers;
-    KeyValueVec body;
+    cJSON body;
 } Request;
 
 /* ====== [REQUEST TYPES] ====== */

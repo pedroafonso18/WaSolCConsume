@@ -11,4 +11,5 @@ add_executable(WaSolCConsume main.c
         rabbit.c
         rabbit.h
         api.c
-        api.h)
+        api.h
+)
