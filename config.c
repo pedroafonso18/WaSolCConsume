@@ -3,7 +3,7 @@
 #include "include/base.h"
 
 Dotenv* load_env(Arena* arena) {
-    env_load(".env", false);
+    env_load("../.env", false);
 
     char* rabbit_url = getenv("RABBIT_URL");
     char* db_url = getenv("DB_URL");
@@ -28,4 +28,6 @@ Dotenv* load_env(Arena* arena) {
     } else {
         dotenv->redis_url = (String){0};
     }
+
+    return dotenv;
 }

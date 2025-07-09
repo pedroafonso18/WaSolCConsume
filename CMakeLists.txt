@@ -7,4 +7,8 @@ add_executable(WaSolCConsume main.c
         config.c
         config.h
         include/dotenv.c
-        base_impl.c)
+        base_impl.c
+        rabbit.c
+        rabbit.h
+        api.c
+        api.h)

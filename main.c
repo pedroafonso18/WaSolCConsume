@@ -6,9 +6,6 @@ int main(void) {
 
     Dotenv* dotenv = load_env(arena);
 
-    if (!StrIsNull(dotenv->rabbit_url)) {
-        printf("RabbitMq URL: %s\n", dotenv->rabbit_url.data);
-    }
 
     ArenaFree(arena);
 }
