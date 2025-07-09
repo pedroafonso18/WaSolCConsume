@@ -4,4 +4,4 @@
 
 amqp_connection_state_t connect_rabbitmq(Dotenv *env);
 
-void create_rabbitmq_consumer(Dotenv *env, const char *queue_name);
+amqp_connection_state_t create_rabbitmq_consumer(Dotenv *env, const char *queue_name);

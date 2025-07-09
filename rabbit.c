@@ -66,18 +66,18 @@ amqp_connection_state_t connect_rabbitmq(Dotenv *env) {
     return conn;
 }
 
-void create_rabbitmq_consumer(Dotenv *env, const char *queue_name) {
+amqp_connection_state_t create_rabbitmq_consumer(Dotenv *env, const char *queue_name) {
     amqp_connection_state_t conn = connect_rabbitmq(env);
-    if (!conn) return;
+    if (!conn) return nullptr;
     amqp_channel_open(conn, 1);
     if (amqp_get_rpc_reply(conn).reply_type != AMQP_RESPONSE_NORMAL) {
         fprintf(stderr, "Opening channel failed\n");
-        return;
+        return nullptr;
     }
     amqp_basic_consume(conn, 1, amqp_cstring_bytes(queue_name), amqp_cstring_bytes("WasolConsumer"), 0, 1, 0, amqp_empty_table);
     if (amqp_get_rpc_reply(conn).reply_type != AMQP_RESPONSE_NORMAL) {
         fprintf(stderr, "Basic consume failed\n");
-        return;
+        return nullptr;
     }
-    // ... Add your message loop here ...
+    return conn;
 }
