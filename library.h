@@ -66,3 +66,8 @@ typedef struct {
 } Webhook;
 
 /* ====== [WEBHOOK TYPES] ====== */
+
+Request parse_request_from_json(Arena* arena, const char* json_str);
+Customer parse_customer_from_json(Arena* arena, const char* json_str);
+Message parse_message_from_json(Arena* arena, const char* json_str);
+Chat parse_chat_from_json(Arena* arena, const char* json_str);

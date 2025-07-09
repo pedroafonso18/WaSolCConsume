@@ -17,6 +17,9 @@ add_executable(WaSolCConsume main.c
         redis.c
         redis.h
         utils.h
+        process.c
+        process.h
+        library.c
 )
 
 if (MSVC)
